@@ -1,0 +1,29 @@
+<div style="padding: 20px; font-family: sans-serif;">
+  <h1>🚀 Resumable Video Uploader</h1>
+
+  <div style="margin-bottom: 20px;">
+    <input type="file" (change)="onFileSelected($event)" [disabled]="isUploading">
+    
+    <button (click)="resetUpload()" 
+            [disabled]="isUploading"
+            style="margin-left: 10px; padding: 5px 10px; background-color: #f44336; color: white; border: none; cursor: pointer;">
+      🗑️ Reset / Delete File
+    </button>
+  </div>
+
+  <div class="progress-container" *ngIf="uploadProgress > 0">
+    <div class="progress-bar" [style.width.%]="uploadProgress">
+      {{ uploadProgress }}%
+    </div>
+  </div>
+
+  <h3 *ngIf="uploadProgress === 100" style="color: green;">
+    ✅ Upload Complete!
+  </h3>
+</div>
+
+<div *ngIf="serverFileStatus" style="background: #fff3cd; color: #856404; padding: 10px; margin-bottom: 10px; border: 1px solid #ffeeba; border-radius: 4px;">
+  {{ serverFileStatus }}
+  <br>
+  <small>(Select the matching file to resume/complete instantly)</small>
+</div>

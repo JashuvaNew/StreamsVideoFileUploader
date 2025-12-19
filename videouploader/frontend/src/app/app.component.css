@@ -1,0 +1,17 @@
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0; /* Light gray background */
+  border-radius: 8px;
+  margin-top: 20px;
+  overflow: hidden; /* Ensures the inner bar stays inside the rounded corners */
+}
+
+.progress-bar {
+  height: 30px;
+  background-color: #4caf50; /* Nice Green */
+  color: white;
+  text-align: center;
+  line-height: 30px; /* Vertically center the text */
+  transition: width 0.2s ease-in-out; /* Makes the movement smooth, not jumpy */
+  font-weight: bold;
+}
